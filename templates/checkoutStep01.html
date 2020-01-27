@@ -1,0 +1,16 @@
+<html>
+<head>
+</head>
+<body>
+	<script src="https://js.stripe.com/v3/"></script>
+	<script>
+var stripe = Stripe("pk_test_8PfL5rQ2K1SaD9cSykWHhu17009ZmNVYj7");
+stripe.redirectToCheckout({
+	sessionId: '{{.}}'
+}).then(function (result) {
+	alert(result.error.message);
+	// TODO: send this error to KAPI
+});
+	</script>
+</body>
+</html>
